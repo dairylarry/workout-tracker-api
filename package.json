@@ -1,0 +1,36 @@
+{
+  "name": "workout-tracker-api",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "workout-tracker-api": "bin/workout-tracker-api.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "synth": "cdk synth",
+    "deploy:dev": "cdk deploy WorkoutTracker-dev",
+    "deploy:prod": "cdk deploy WorkoutTracker-prod",
+    "migrate:dry-run": "tsx scripts/migrate-legacy-data.ts --dry-run",
+    "migrate": "tsx scripts/migrate-legacy-data.ts"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^22.7.5",
+    "aws-cdk": "^2.160.0",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.1",
+    "typescript": "~5.6.3",
+    "vitest": "^2.1.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.665.0",
+    "@aws-sdk/lib-dynamodb": "^3.665.0",
+    "aws-cdk-lib": "^2.160.0",
+    "constructs": "^10.3.0",
+    "ulid": "^2.3.0",
+    "zod": "^3.23.8"
+  }
+}

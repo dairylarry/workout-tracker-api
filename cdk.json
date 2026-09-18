@@ -1,0 +1,33 @@
+{
+  "app": "npx tsx bin/workout-tracker-api.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "tsconfig.json",
+      "package*.json",
+      "node_modules",
+      "test"
+    ]
+  },
+  "context": {
+    "ownerEmail": "barryayang@gmail.com",
+    "corsOrigins": [
+      "http://localhost:5173",
+      "https://barryyang.github.io"
+    ],
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": ["aws", "aws-cn"],
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId": true,
+    "@aws-cdk/core:includePrefixInUniqueNameGeneration": true,
+    "@aws-cdk/aws-lambda:useLatestRuntimeVersion": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/core:aclDeletionProtection": true
+  }
+}
